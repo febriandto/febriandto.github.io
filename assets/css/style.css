@@ -1,0 +1,141 @@
+:root{
+  --black: #404040;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+body{
+    font-family: 'Inconsolata', monospace;
+    background-image: url("../../assets/images/dot-grid.png");
+    color: var(--black);
+}
+
+.small{
+  font-size: small;
+}
+
+button{
+  background: none;
+  border: 1px solid var(--black);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+header{
+  position: fixed;
+  background: none;
+  border: 1px solid var(--black);
+  margin: 10px 20px;
+  padding: 10px 20px;
+  backdrop-filter: blur(10px);
+  width: calc(100% - 2.5%);
+  border-radius: 5px;
+}
+
+header ul{
+  list-style: none;
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+header ul li{
+  margin: 0px 20px;
+}
+header ul li a{
+  font-size: 1.5rem;
+  color: var(--black);
+}
+
+section{
+  width: 100%;
+  height: 100vh;
+}
+
+section .content{
+  padding-top: 6rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.divider{
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='4' stroke-dasharray='2%2c 8' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+  height: 1px;
+}
+
+.section-one h1{
+  font-size: 5rem;
+}
+
+.section-one h1 span.one, .section-one h1 span.two{
+  -webkit-text-stroke: 1px var(--black);
+   color: #ffffff00;
+}
+
+.section-one .content-one{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(90vh - 6rem);
+  flex-direction: column;
+}
+
+
+
+.section-two .card{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.section-two .card .card-item{
+  border: 1px solid black;
+  min-height: 200px;
+  padding: 10px;
+  flex: 0 0 calc(32% - 5px); /* Gunakan flex-basis untuk mengatur lebar */
+  border-radius: 5px;
+  margin: 10px 10px;
+  transition: .5s;
+}
+.section-two .card .card-item .desc{
+  margin-top: 1rem;
+}
+
+
+.section-two .card .card-item:hover{
+  box-shadow: 5px 5px 0px 0px var(--black);
+  transition: .5s;
+}
+
+
+
+/* Media queries untuk layar yang lebih kecil */
+@media screen and (max-width: 768px) {
+  .section-two .card .card-item {
+    flex: 0 0 calc(50% - 20px); /* Ubah lebar menjadi 50% saat layar lebih kecil */
+  }
+  header{
+    width: calc(100% - 9%);
+  }
+  .section-one h1{
+    font-size: 3rem;
+  }
+  .section-one .content-one{
+    height: calc(90vh - 15rem);
+  }
+  .section-two h1{
+    font-size: 1rem;
+  }
+  .section-two svg{
+    width: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section-two .card .card-item {
+    flex: 0 0 calc(100% - 20px); /* Ubah lebar menjadi 100% saat layar sangat kecil */
+  }
+}
